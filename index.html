@@ -10,16 +10,23 @@
     <title>Poke API</title>
 </head>
 <body>
-    <h1>Selecciona tu Pokemon</h1>
+    <main class="main--container">
 
-    <main>
-        <h2>Dale clic al botón para elegir un pokemon</h2>
-        <button class="btn" id="choose-pokemon" onclick="showPokemon(sortIdPokemon())" >Elegir</button>
-        <sector class="pokemon--container" id="pokeContainer">
+        <section class="block--container title--container">
+            <h1>Selecciona tu Pokemon</h1>
+        </section>
+        
+        <section class="block--container second-section">
+            <h2>Dale clic al botón para elegir un pokemon</h2>
+            <button class="btn" id="choose-pokemon" onclick="showPokemon(sortIdPokemon())" >Elegir</button>
 
-        </sector>
+            <div class="main--pokemon-container" id="pokeContainer">
+
+            </div>
+                
+        </section>
+        
     </main>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>

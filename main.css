@@ -1,5 +1,6 @@
 *{
     margin:0;
+    text-align: center;
     box-sizing: border-box;
     color:#fff;
     font-size: 62.5%;
@@ -9,31 +10,109 @@ html{
     scroll-behavior: smooth;
     background-color: #0093E9;
     background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-    height:100%;
+    min-height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1{
     font-size: 3rem;
+
 }
 h2{
     font-size: 2rem;
+    margin:2rem 0;
+}
+.main--container{
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 5rem;
+    padding: 2rem;
+}
+.title--container{
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.301);
+    border: 1px solid #fff;
+    padding: 1rem 0.25rem;
+    max-width: 300px;   
+    margin:0 auto; 
+}
+.single--container{
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.301);
+    border: 1px solid #fff;
+    padding: 1rem 0.25rem;
+    min-width: 300px;    
+}
+.single--container:hover{
+    cursor: pointer;
+}
+.block--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second-section{
+    flex-direction: column;
 }
 
 .btn{
-    padding: 0.5rem 2rem;
+    padding: 0.75rem 6rem;
     background-color: #53BB7A;
     outline: none;
     border: none;
     cursor: pointer;
     font-weight: 900;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
+    border-radius: 15px;
+}
+
+.btn:hover{
+    background-color: #5cdb8d;
+}
+.main--pokemon-container{
+    padding:1rem;
+    display: grid;
+    gap: 25px;
+    margin-top: 2rem;
+    grid-template-columns: repeat(1, 290px)
+}
+@media screen and (min-width: 650px){  
+	.main--pokemon-container{
+  		grid-template-columns: repeat(2, 290px);
+    }
+    .title--container{
+        max-width: 600px; 
+    }
+       }
+@media screen and (min-width: 1024px){  
+        .main--pokemon-container{
+              grid-template-columns: repeat(3, 290px);
+        }
+        .title--container{
+            max-width: 900px; 
+        }
+    }    
+.single--pokemon-container{
+    border:#fff solid 1px;
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 3rem;
+    border-radius: 15px;
 }
 .pokemon--text{
     font-size: 2rem;
+    list-style: none;
     
 }
+.pokemon--text ul, span{
+    padding: 0;
+    font-size: 1.5rem;
+}
 .pokemon--name{    
-    font-size: 2rem;
     font-weight: 900;
     text-transform: capitalize;
+}
+
+.img-container{
+    max-height: 150px;
 }
