@@ -1,3 +1,5 @@
+let fetchData = require('..../asincronismo_js/src/utils');
+
 const   API_URL = "https://pokeapi.co/api/v2/",
 
         POKEMON_URL = "pokemon/:id",
@@ -20,6 +22,8 @@ const   btn =  document.getElementById("choose-pokemon").innerText,    //documen
         sortIdPokemon= () => Math.floor(Math.random()*150);
 
 //Async Function
+
+
 async function getPokemon(id){
     const response= await fetch(`${API_URL}${POKEMON_URL.replace(':id',id)}`)
     const data = await response.json()
@@ -55,7 +59,7 @@ class Pokemon{
                 let valueDesired = e.currentTarget.querySelector(".pokemon--id").innerText
                 alert (`Este pokemon tiene un Id de ${valueDesired}`)
             }
-            const clickOption = function(value){value.addEventListener("click",alertMessage)}
+            const clickOption = value=>value.addEventListener("click",alertMessage)
             Array.from(selectedClass).map(clickOption)
     }
     getImage(num){

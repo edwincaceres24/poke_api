@@ -19,9 +19,12 @@ h1{
     font-size: 3rem;
 
 }
-h2{
+h2,h4{
     font-size: 2rem;
     margin:2rem 0;
+}
+p{
+    font-size: 1.8rem;
 }
 .main--container{
     margin-left: 3rem;
@@ -44,9 +47,6 @@ h2{
     padding: 1rem 0.25rem;
     min-width: 300px;    
 }
-.single--container:hover{
-    cursor: pointer;
-}
 .block--container{
     display: flex;
     justify-content: center;
@@ -57,18 +57,28 @@ h2{
 }
 
 .btn{
-    padding: 0.75rem 6rem;
     background-color: #53BB7A;
     outline: none;
     border: none;
     cursor: pointer;
     font-weight: 900;
-    font-size: 2.5rem;
     border-radius: 15px;
+}
+.main-cta{
+    padding: 0.75rem 6rem;
+    max-width: 300px;   
+    font-size: 2.5rem;
 }
 
 .btn:hover{
     background-color: #5cdb8d;
+}
+.pokeButton{
+    padding: 0.75rem 2rem;
+    font-size: 1.8rem;
+    max-width: 200px;
+    margin: 1rem 0;
+
 }
 .main--pokemon-container{
     padding:1rem;

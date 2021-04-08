@@ -1,0 +1,27 @@
+{
+  "name": "pokeapi",
+  "version": "1.0.0",
+  "description": "From Async Js Platzi course",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwincaceres24/poke_api.git"
+  },
+  "keywords": [
+    "js",
+    "async",
+    "api"
+  ],
+  "author": "edwin cacers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwincaceres24/poke_api/issues"
+  },
+  "homepage": "https://github.com/edwincaceres24/poke_api#readme",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
