@@ -32,6 +32,12 @@ p{
     margin-top: 5rem;
     padding: 2rem;
 }
+ul{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
 .title--container{
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.301);
@@ -110,8 +116,16 @@ p{
     border-radius: 15px;
 }
 .pokemon--text{
-    font-size: 2rem;
+    font-size: 1.5rem;
     list-style: none;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 0.5rem 0.75rem;
+    opacity: 0.9;
+    background-color: red;
+    border-radius: 15px;
+    width: 85px;
+    margin:1rem 0.5rem;
     
 }
 .pokemon--text ul, span{
