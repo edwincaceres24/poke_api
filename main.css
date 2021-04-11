@@ -141,3 +141,31 @@ ul{
 .img-container{
     max-height: 150px;
 }
+
+/*Modal*/
+.poke--modal-background{
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.5;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.poke--modal-container{
+    background: white;
+    width: 300px;
+    height: 300px;
+}
+.poke--modal-message, .poke--modal-close-button{
+    font-size: 1.8rem;
+    color:black
+}
+.poke--modal-message{
+    text-align: center;
+}
+.poke--modal-close-button{
+    transform: rotate(45deg);
+    cursor: pointer;
+}

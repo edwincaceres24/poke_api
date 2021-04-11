@@ -1,58 +1,57 @@
-// let fetchData = require('/Users/administrador/Desktop/DEV/Platzi/asincronismo_js/src/utils/fetchData');
+// let fetchData = require('/Users/administrador/Desktop/DEV/Platzi/asincronismo_js/src/utils/fetchData'); //Can't use Require on Js without node
 import * as myFn from './components.js';
 import * as myEv from './event.js';
 
-const API = 'https://pokeapi.co/api/v2/pokemon?',
+const API = 'https://pokeapi.co/api/v2/pokemon/',     //Define main API
+  API_Limit = 'https://pokeapi.co/api/v2/pokemon?',
+  updatePokemon= document.getElementById("choose-pokemon"),
   API_Location = 'https://pokeapi.co/api/v2/location/',
-  limit = 'limit=',
-  mainFetchFunction = function(){
-    
-  },
+  limit = 'limit=',                
   fetchPokemon = async function (pokemon) {
     let url = pokemon.url
-    await fetch(url)
+    await fetch(API + pokemon)
       .then(response => response.json())
-      .then(function (pokeData) {
+      .then( (pokeData) => {
         myFn.renderAllPokemon(pokeData)
         console.log(pokeData)
       })
-      // .then(()=>console.log(`Finished with ${pokemon.name}`))
       .catch(err => console.error(err))
     };
-    const getPokemon = async function (number) {
+    const getPokemon = async function (number) {      //Not using for the moment
       await fetch(API + limit + number)
       .then(response => response.json())
       .then(data => {
         console.log(data)
         data.results.map(pokemon => {fetchPokemon(pokemon)})
       })
-      .then(()=>printMessageAtTheEnd())
-      .then( function() { myEv.getAllPokeButton()})
+      .then( function() { printMessageAtTheEnd()})   
+      //We stablish a set timeout that triggers the function after the callback of the API has finished, it isn't 100% accurate because of client could have a really low connection
       .catch(err => console.error(err))
-      // await Promise.resolve(console.log("LoadingFinished"))
     },
-    setValue = function (value) {
-      typeof (value) == "number" ? getPokemon(value): alert("Please write down a number")
-    },
-    printMessageAtTheEnd = async function(){
-      let myVar = await Promise.resolve('Succedd').then(console.log('This must be printed after the call to the API'))
-      return myVar
-
-    };
+    printMessageAtTheEnd = function(){
+      setTimeout( ()=>{
+        console.log("All events were added succesfully") 
+        myEv.getAllPokeButton()
+        myFn.renderPokeModal()
+      },2700)};
     
-    setValue(parseInt(prompt("Coloca un número del 1 al 150:")))
-    
+    // setValue(150) 
 
-// const arrangeArray = function(num){
-//   for (let i=1;i<=num;i++){
-//           let myVar = Math.floor(Math.random()*150)  
-// 	  myArray.push(myVar)
-//     }};
+const arrangeArray = function(num){
+  for (let i=1;i<=num;i++){
+          let myVar = Math.floor(Math.random()*150)  
+	  myArray.push(myVar)
+    }
+  printMessageAtTheEnd()
+  };
 
-// const myArray=[];
-
-// arrangeArray(15);
-
-// console.log(myArray);
-
-//  myArray.forEach((e)=>getPokemon(e));
+  
+  const myArray=[];
+  
+  arrangeArray(15);
+  
+  console.log(myArray);
+  
+  myArray.map((e)=>fetchPokemon(e));
+  
+  // updatePokemon.addEventListener("click", ()=>{ arrangeArray(15)} )

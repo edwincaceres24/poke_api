@@ -41,9 +41,34 @@ export function renderAllPokemon(pokeData){
             container.appendChild(typeLi)
         })
     }
-export  function printTest(){
-        console.log('This is from componets file')
+export  function renderPokeModal(){
+        const modalBackground = document.createElement('section'),
+                modalContainer = document.createElement('div'),
+                modalMessage = document.createElement('h3'),
+                modalCloseButton = document.createElement('a');
+
+
+        modalCloseButton.innerText='+'
+        modalCloseButton.classList.add('poke--modal-close-button')
+
+        modalMessage.innerText='Me quiero comer a Nathalie'
+        modalMessage.classList.add('poke--modal-message')
+
+        modalContainer.append(modalCloseButton, modalMessage)
+        modalContainer.classList.add('poke--modal-container')
+
+        modalBackground.appendChild(modalContainer)
+        modalBackground.classList.add('poke--modal-background')
+        
+
+        document.body.insertBefore(modalBackground, document.body.firstChild)
+
     };
 
-// export function renderAllPokemon()
-// export function printTest()
+
+    // When you open the popup, change the css overflow property to hidden like
+    
+    // $('body').css('overflow','hidden')
+    // When you close it, change back to normal
+    
+    // $('body').css('overflow','auto')
