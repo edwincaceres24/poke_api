@@ -72,7 +72,7 @@ ul{
 }
 .main-cta{
     padding: 0.75rem 6rem;
-    max-width: 300px;   
+    max-width: 500px;   
     font-size: 2.5rem;
 }
 
@@ -146,26 +146,49 @@ ul{
 .poke--modal-background{
     height: 100%;
     width: 100%;
-    background: black;
-    opacity: 0.5;
-    position: absolute;
-    display: flex;
+    /* background: black; */
+    position: fixed;
+    display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 .poke--modal-container{
     background: white;
     width: 300px;
     height: 300px;
+    border-radius: 25px;
+    position: relative;
+    padding: 2rem;
+    z-index: 1;
 }
 .poke--modal-message, .poke--modal-close-button{
     font-size: 1.8rem;
-    color:black
+    color:black;
+    
 }
 .poke--modal-message{
     text-align: center;
+    margin-top: 3rem;
 }
 .poke--modal-close-button{
     transform: rotate(45deg);
     cursor: pointer;
+    position: absolute;
+    left: 260px;
+    font-size: 4rem;
+    font-weight: bold;
+    top: 5px;
+}
+.poke--modal-list-container{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2,100px);
+    gap: 2rem;
+}
+.poke--modal-skill-item{
+    color:black;
+    list-style: none;
+    font-size: 1.6rem;
+    text-transform: capitalize;
 }
