@@ -1,4 +1,4 @@
-import API from '/asset/apicall.js';
+import API from '../asset/apicall.js';
 
 
 //Variables
