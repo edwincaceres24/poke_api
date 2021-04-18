@@ -1,40 +1,33 @@
-import * as myCp from '/asset/components.js';
-import * as myEv from '/asset/event.js';
+import * as myCp from '/asset/pokeCard.js';
+import * as myPm from '/asset/pokeModal.js'
+
 
 const API = 'https://pokeapi.co/api/v2/pokemon/', //Define main API
-  myArray = [],
+  pokemonArray = [],
   fetchPokemon = async function (pokemon) {
-    let url = pokemon.url
     await fetch(`${API}${pokemon}`)
       .then(response => response.json())
       .then(pokeData => myCp.renderAllPokemon(pokeData))
-      // .then(data => console.log(data.slice(0,9))) //Here you need to add de parametre
       .catch(err => console.error(err))
   };
-const getPokemon = async function (number) { //Not using for the moment
-  await fetch(API + limit + number)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-      data.results.map(pokemon => {
-        fetchPokemon(pokemon)
-      })
-    })
-    .catch(err => console.error(err))
-}
-
 const arrangeArray = function (num) {
   for (let i = 1; i <= num; i++) {
-    let myVar = Math.floor(Math.random() * 150)
-    myArray.push(myVar)
+    let randomNumber = Math.floor(Math.random() * num)
+    if (randomNumber=== 0 || pokemonArray.includes(randomNumber)){
+      continue
+    }
+    else{
+      pokemonArray.push(randomNumber)
+    }
   }
 };
 
 
 
-arrangeArray(15);
-myArray.map((e) => fetchPokemon(e));
-myCp.renderPokeModal()
+arrangeArray(100);
+pokemonArray.map((e) => fetchPokemon(e));
+myPm.renderPokeModal()
+
 
 
 export default API; //Exporting variable to another file in JS

@@ -74,6 +74,7 @@ ul{
     padding: 0.75rem 6rem;
     max-width: 500px;   
     font-size: 2.5rem;
+    margin-top:3rem;
 }
 
 .btn:hover{
@@ -146,12 +147,13 @@ ul{
 .poke--modal-background{
     height: 100%;
     width: 100%;
-    /* background: black; */
+    background:#00000054;
     position: fixed;
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 1;
+    margin: -5rem 0;
 }
 .poke--modal-container{
     background: white;
@@ -169,7 +171,7 @@ ul{
 }
 .poke--modal-message{
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 0.5rem;
 }
 .poke--modal-close-button{
     transform: rotate(45deg);
@@ -181,9 +183,9 @@ ul{
     top: 5px;
 }
 .poke--modal-list-container{
-    margin-top: 2rem;
+    margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(2,100px);
+    grid-template-columns: repeat(2,120px);
     gap: 2rem;
 }
 .poke--modal-skill-item{

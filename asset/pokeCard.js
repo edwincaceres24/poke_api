@@ -1,5 +1,5 @@
-import * as myEv from '/asset/event.js';
-import * as myFnt from '/asset/function.js';
+import * as myEv from '/asset/pokeModal.js';
+
 
 export function renderAllPokemon(pokeData){
     let allPokemonContainer = document.getElementById('pokeContainer'),
@@ -50,46 +50,3 @@ export function renderAllPokemon(pokeData){
             container.appendChild(typeLi)
         })
     }
-export  function renderPokeModal(){
-        const modalBackground = document.createElement('section'),
-                modalContainer = document.createElement('div'),
-                modalMessage = document.createElement('h3'),
-                modalListContainer = document.createElement('ul'),
-                modalCloseButton = document.createElement('a');
-
-        modalListContainer.classList.add('poke--modal-list-container')
-        modalCloseButton.innerText='+'
-        modalCloseButton.classList.add('poke--modal-close-button')
-
-        modalMessage.innerText='Pokemon skill:'
-        modalMessage.classList.add('poke--modal-message')
-
-        modalContainer.append(modalCloseButton, modalMessage,modalListContainer)
-        modalContainer.classList.add('poke--modal-container')
-
-        modalBackground.appendChild(modalContainer)
-        modalBackground.classList.add('poke--modal-background')
-        
-
-        document.body.insertBefore(modalBackground, document.body.firstChild)
-        hideModal()
-    };
-
-export function hideModal(){
-    let closedButtonInModal= document.querySelector('.poke--modal-close-button'),
-        modalContainer=document.querySelector('.poke--modal-background');
-    closedButtonInModal.addEventListener("click",  ()=>closeModal());
-
-    const closeModal = ()=>{
-        modalContainer.style.display="none";
-        // console.log("Changing style")
-        modalContainer.querySelector('ul').innerHTML="";
-    }
-}
-
-    // When you open the popup, change the css overflow property to hidden like
-    
-    // $('body').css('overflow','hidden')
-    // When you close it, change back to normal
-    
-    // $('body').css('overflow','auto')
