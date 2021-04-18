@@ -1,3 +1,7 @@
+:root{
+    --black: #000;
+}
+
 *{
     margin:0;
     text-align: center;
@@ -166,7 +170,7 @@ ul{
 }
 .poke--modal-message, .poke--modal-close-button{
     font-size: 1.8rem;
-    color:black;
+    color: var(--black);
     
 }
 .poke--modal-message{
@@ -187,10 +191,20 @@ ul{
     display: grid;
     grid-template-columns: repeat(2,120px);
     gap: 2rem;
+    margin-left: 4rem;
+}
+.poke-modal-tag-name,.poke--modal-skill-item{
+    color:var(--black);
+    text-transform: capitalize;
+    color:var(--black);
+    
+}
+.poke-modal-tag-name{
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 .poke--modal-skill-item{
-    color:black;
-    list-style: none;
+    list-style: disc;
     font-size: 1.6rem;
-    text-transform: capitalize;
+    text-align: left;
 }

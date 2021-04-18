@@ -16,7 +16,7 @@ export function renderAllPokemon(pokeData){
         pokeNumber.innerText = `#${pokeData.id}`;
         pokeButton.innerHTML = `Ver más`;
         //Functions
-        getImage(pokeData.id, pokeImageContainer);
+        getImage(pokeData.id, pokeImageContainer, pokeData.name);
         getTypes(pokeData.types, pokeTypes) 
         //Set Classes
         pokeContainer.classList.add("single--container");
@@ -35,18 +35,64 @@ export function renderAllPokemon(pokeData){
         let allMoves= data.moves;
         return allMoves.map(e=>e.move.name)
     }
-    function getImage(id,container){
+    function getImage(id,container,name){
         let pokeImage = document.createElement('img');
         pokeImage.setAttribute("src", `https://pokeres.bastionbot.org/images/pokemon/${id}.png`)
+        pokeImage.setAttribute("alt", `${name}`)
         pokeImage.classList.add('img-container')
         container.appendChild(pokeImage)
         
     }
     function getTypes(types, container){
         types.map(type=>{
-            let typeLi = document.createElement('li')
+            let typeLi = document.createElement('li'),
+                typeTag= `${type['type']['name']}`;
+            
             typeLi.classList.add("pokemon--text")
-            typeLi.innerHTML=`${type['type']['name']}`
+            typeLi.style.backgroundColor= getTypeColor(typeTag);
+            typeLi.innerHTML= typeTag
             container.appendChild(typeLi)
         })
     }
+
+    function getTypeColor(types){
+
+    
+        switch(types){
+            case 'grass':
+                return '#71C558'
+            case 'fire':
+                return '#EA7A3C'
+            case 'water':
+                return '#539AE2'
+            case 'psychic':
+                return '#E5709B'
+            case 'poison':
+                return '#B468B7'
+            case 'normal':
+                return '#AAB09F'
+            case 'rock':
+                return '#B2A061'
+            case 'ice':
+                return '#70CBD4'
+            case 'steel':
+                return '#89A1B0'
+            case 'ground':
+                return '#CC9F4F'
+            case 'ghost':
+                return '#846AB6'
+            case 'flying':
+                return '#7DA6DE'
+            case 'fairy':
+                return '#E397D1'
+            case 'electric':
+                return '#E5C531'
+            case 'bug':
+                return '#94BC4A'
+            case 'fighting':
+                return '#CB5F48'
+            default:
+                return 'red'
+        }
+    }
+    // (16) ["fire", "psychic", "rock", "ground", "bug", "poison", "water", "grass", "fairy", "ghost", "normal", "fighting", "flying", "electric", "ice", "steel"]
