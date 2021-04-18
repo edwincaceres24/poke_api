@@ -1,5 +1,5 @@
-import * as myCp from './asset/pokeCard.js';
-import * as myPm from './asset/pokeModal.js'
+import * as myCp from '/asset/pokeCard.js';
+import * as myPm from '/asset/pokeModal.js'
 
 
 const API = 'https://pokeapi.co/api/v2/pokemon/', //Define main API

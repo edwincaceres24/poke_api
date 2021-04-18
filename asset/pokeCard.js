@@ -1,4 +1,4 @@
-import * as myEv from './asset/pokeModal.js';
+import * as myEv from '/asset/pokeModal.js';
 
 
 export function renderAllPokemon(pokeData){
