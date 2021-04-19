@@ -1,5 +1,6 @@
 import * as myCp from '../asset/pokeCard.js';
 import * as myPm from '../asset/pokeModal.js';
+import myVar  from '../asset/search.js';
 
 
 const API = 'https://pokeapi.co/api/v2/pokemon/', //Define main API
@@ -27,7 +28,7 @@ const arrangeArray = function (num) {
 arrangeArray(100);
 pokemonArray.map((e) => fetchPokemon(e));
 myPm.renderPokeModal()
-
+myVar;
 
 
 export default API; //Exporting variable to another file in JS

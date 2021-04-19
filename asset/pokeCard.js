@@ -7,16 +7,16 @@ export function renderAllPokemon(pokeData){
         pokeName = document.createElement('h4'),
         pokeNumber = document.createElement('p'),
         pokeImageContainer= document.createElement('picture'),
+        pokeImageSource= pokeData.sprites.other.dream_world.front_default,
         pokeTypes = document.createElement('ul'),
         pokeButton = document.createElement('button');
-        
         
         //Set Values        
         pokeName.innerText = pokeData.name;
         pokeNumber.innerText = `#${pokeData.id}`;
-        pokeButton.innerHTML = `Ver más`;
+        pokeButton.innerHTML = `Skills`;
         //Functions
-        getImage(pokeData.id, pokeImageContainer, pokeData.name);
+        getImage(pokeImageSource, pokeImageContainer, pokeData.name);
         getTypes(pokeData.types, pokeTypes) 
         //Set Classes
         pokeContainer.classList.add("single--container");
@@ -37,7 +37,7 @@ export function renderAllPokemon(pokeData){
     }
     function getImage(id,container,name){
         let pokeImage = document.createElement('img');
-        pokeImage.setAttribute("src", `https://pokeres.bastionbot.org/images/pokemon/${id}.png`)
+        pokeImage.setAttribute("src", `${id}`)
         pokeImage.setAttribute("alt", `${name}`)
         pokeImage.classList.add('img-container')
         container.appendChild(pokeImage)
