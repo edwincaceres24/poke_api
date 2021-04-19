@@ -24,7 +24,9 @@ searchHandler= search.addEventListener('keyup', (e)=> {
             .catch((error) => {
                 console.log(error)
                 errorMessage()})
-        };
+        },
+        // myVar= setTimeout(()=>console.log(`${API} from search File`),1000),
+        myVar=console.log('Search File');
 
 
-
+export default {search, searchHandler}

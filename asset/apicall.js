@@ -1,6 +1,6 @@
 import * as myCp from '../asset/pokeCard.js';
 import * as myPm from '../asset/pokeModal.js';
-
+import searchHandler from '../asset/search.js';
 
 
 const API = 'https://pokeapi.co/api/v2/pokemon/', //Define main API
