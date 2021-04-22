@@ -92,4 +92,5 @@ export function hideModal() {
     }
 
     closedButtonInModal.addEventListener("click", () => closeModal());
-}
+    document.body.addEventListener("keydown", (e) => e.key==='Escape'?closeModal():null)
+            }

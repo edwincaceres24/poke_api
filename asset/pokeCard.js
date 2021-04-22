@@ -96,4 +96,4 @@ export function renderAllPokemon(pokeData){
                 return 'red'
         }
     }
-    // (16) ["fire", "psychic", "rock", "ground", "bug", "poison", "water", "grass", "fairy", "ghost", "normal", "fighting", "flying", "electric", "ice", "steel"]
+    // (16) 

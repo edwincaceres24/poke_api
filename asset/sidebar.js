@@ -6,7 +6,7 @@ const renderSideBar =  async function () {
         sidebarContainer = document.createElement('aside'),
         sideBarTitle = document.createElement('h2'),
         sideBarOptionContainer = document.createElement('ul'),
-        testArray = ["fire", "psychic", "rock", "ground", "bug", "poison", "water", "grass", "fairy", "ghost", "normal", "fighting", "flying", "electric", "ice", "steel"];
+        typesOfPokemon = ["fire", "psychic", "rock", "ground", "bug", "poison", "water", "grass", "fairy", "ghost", "normal", "fighting", "flying", "electric", "ice", "steel"];
 
     sidebarContainer.classList.add('sidebar--main-container')
     sideBarTitle.classList.add('informative-text')
@@ -15,7 +15,7 @@ const renderSideBar =  async function () {
 
 
     pokemonCardContainer.parentNode.insertBefore(sidebarContainer,pokemonCardContainer)
-    renderOptionsInSideBar(testArray, sideBarOptionContainer)
+    renderOptionsInSideBar(typesOfPokemon, sideBarOptionContainer)
     sidebarContainer.append(sideBarTitle,sideBarOptionContainer)
 
     setTimeout( ()=>setPokemonTypes(API),0) 
@@ -36,7 +36,7 @@ const renderOptionsInSideBar = function (list,container) {
 const setPokemonTypes = async function (API) {
     await fetch(`${API}1`)
     .then((response) => response.json() )
-    .then((data) => console.log(data.moves) )
+    .then((data) => console.log(data))
     .catch((error) => console.error(error))
 }
 
