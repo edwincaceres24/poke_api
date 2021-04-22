@@ -28,6 +28,7 @@ export function renderAllPokemon(pokeData){
         allPokemonContainer.appendChild(pokeContainer);
         myEv.eventHandlerForPokeButton(pokeContainer); //We pass an event handler as a function of the iterative processs
 
+
         return getMoves(pokeData)  // We are returning the values of skills
         
     };

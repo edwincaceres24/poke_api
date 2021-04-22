@@ -41,6 +41,9 @@ ul{
     display: flex;
     justify-content: center;
 }
+li{
+    font-size: 1.6rem;
+}
 
 .title--container{
     border-radius: 25px;
@@ -75,6 +78,13 @@ ul{
 }
 .search--pokemon{
     color: var(--black);
+}
+.info--container{
+    display: flex;
+    width:100%;    
+}
+.sidebar--main-container{
+    display: none;
 }
 .main-cta, .search--pokemon,.informative-text{
     max-width: 300px;
@@ -124,6 +134,15 @@ ul{
         .title--container{
             max-width: 900px; 
         }
+        .main--pokemon-container{
+            width:70%;
+        }
+        .sidebar--main-container{
+            width:30%;
+            display: block;
+            padding: 0 3rem;
+            margin: 2rem 5rem 0 5rem;
+         }
     }    
 .single--pokemon-container{
     border:#fff solid 1px;
@@ -158,6 +177,23 @@ ul{
     max-height: 150px;
 }
 
+/*SideBar*/
+
+.sidebar--list-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.side--bar-listitem{
+    margin: 0.5rem 0;
+    text-align: left;
+    list-style: none;
+
+}
+.side--bar-listitem span{
+    margin-left: 2rem;
+    text-transform: capitalize;
+}
 /*Modal*/
 .poke--modal-background{
     height: 100%;
@@ -216,6 +252,5 @@ ul{
 }
 .poke--modal-skill-item{
     list-style: disc;
-    font-size: 1.6rem;
     text-align: left;
 }
