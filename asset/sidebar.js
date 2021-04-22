@@ -18,7 +18,7 @@ const renderSideBar =  async function () {
     renderOptionsInSideBar(typesOfPokemon, sideBarOptionContainer)
     sidebarContainer.append(sideBarTitle,sideBarOptionContainer)
 
-    setTimeout( ()=>setPokemonTypes(API),0) 
+    // setTimeout( ()=>setPokemonTypes(API),0) 
 }
 const renderOptionsInSideBar = function (list,container) {
     

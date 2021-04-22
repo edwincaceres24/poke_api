@@ -40,6 +40,7 @@ export function renderAllPokemon(pokeData){
         let pokeImage = document.createElement('img');
         pokeImage.setAttribute("src", `${id}`)
         pokeImage.setAttribute("alt", `${name}`)
+        pokeImage.setAttribute("loading", `lazy`)
         pokeImage.classList.add('img-container')
         container.appendChild(pokeImage)
         

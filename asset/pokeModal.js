@@ -91,6 +91,6 @@ export function hideModal() {
         modalContainer.querySelector('.poke--modal-message').querySelector('span').innerHTML = "";
     }
 
-    closedButtonInModal.addEventListener("click", () => closeModal());
-    document.body.addEventListener("keydown", (e) => e.key==='Escape'?closeModal():null)
+        closedButtonInModal.addEventListener("click", () => closeModal());
+        document.body.addEventListener("keydown", (e) => e.key==='Escape'?closeModal():null)
             }
