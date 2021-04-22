@@ -27,7 +27,7 @@ const renderOptionsInSideBar = function (list,container) {
         
         singleItem.classList.add('side--bar-listitem')
         // console.log(e);
-        singleItem.innerHTML = `<input type="checkbox"  name="${e}" value="${e}"><span>${e}</span>`;
+        singleItem.innerHTML = `<input type="checkbox"  name="${e}" value="${e}" ><span>${e}</span>`;
         handlerForCheckbox(singleItem)
         container.appendChild(singleItem)
     })
@@ -43,6 +43,28 @@ const setPokemonTypes = async function (API) {
 const handlerForCheckbox = function(element){
     let inputElement = element.querySelector('input')
 
-    inputElement.addEventListener('click', (e)=>console.log(e.target.value))
+    inputElement.addEventListener('click', ()=>filterPokemonCards())
+}
+
+const filterPokemonCards= function(){
+    let 
+        allPokeTypes = Array.from(document.querySelectorAll('.pokemon--text')),
+        allPokeCards= Array.from(document.querySelectorAll('.single--container')),
+        allCheckboxInSideBar = Array.from(document.querySelector('.sidebar--main-container').querySelectorAll('input'));
+        
+        let allinputsMarked = allCheckboxInSideBar.filter(e=>e.checked===true), //This show the checkboks that were marked
+            allInputElementValue = allinputsMarked.map(e=>e.value), //Show values
+            filteredPokeCards = allPokeTypes.filter(e=>allInputElementValue.includes(e.textContent));
+        
+        if(allinputsMarked.length===0){
+            allPokeCards.map(e=>e.style.display='block')
+            
+        }else{
+            allPokeCards.map(e=>e.style.display='none')
+            filteredPokeCards.map(e=>e.parentElement.parentElement.style.display='block');
+            console.log(filteredPokeCards)
+        }
+        
+
 }
 export {renderSideBar,setPokemonTypes};
