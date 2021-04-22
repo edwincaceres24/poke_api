@@ -1,7 +1,7 @@
 import * as myCp from '../asset/pokeCard.js';
 import * as myPm from '../asset/pokeModal.js';
 import searchHandler from '../asset/search.js';
-import {renderSideBar,setPokemonTypes}  from '../asset/sideBar.js';
+import {renderSideBar,setPokemonTypes}  from '../asset/sidebar.js';
 
 
 const API = 'https://pokeapi.co/api/v2/pokemon/', //Define main API
